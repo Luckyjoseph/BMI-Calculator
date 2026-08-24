@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.bmicalculator.databinding.ActivityMainBinding
 import android.view.View
 import android.widget.AdapterView
+import androidx.core.content.ContextCompat
 import kotlin.math.pow
 
 class MainActivity : AppCompatActivity() {
@@ -78,19 +79,22 @@ class MainActivity : AppCompatActivity() {
                 val bmi = weightInKg / heightInMeters.pow(2)
                 val bmiResult = String.format("%.2f", bmi)
 
-                val bmiCategory = when {
-                    bmi < 18.5 -> "Underweight"
-                    bmi < 25 -> "Normal weight"
-                    bmi < 30 -> "Overweight"
-                    else -> "Obese"
+                val (bmiCategory, colorRes) = when {
+                    bmi < 18.5 -> "Underweight" to R.color.bmi_underweight
+                    bmi < 25 -> "Normal weight" to R.color.bmi_normal
+                    bmi < 30 -> "Overweight" to R.color.bmi_overweight
+                    else -> "Obese" to R.color.bmi_obese
                 }
 
-                binding.resultText.text = "BMI: $bmiResult\nCategory: $bmiCategory"
+                binding.resultCard.visibility = View.VISIBLE
+                binding.resultCard.setCardBackgroundColor(ContextCompat.getColor(this, colorRes))
+                binding.resultText.text = "BMI: $bmiResult"
+                binding.categoryText.text = bmiCategory
             } else {
-                binding.resultText.text = "Height must be greater than 0"
+                binding.resultCard.visibility = View.GONE
             }
         } else {
-            binding.resultText.text = "Invalid Input"
+            binding.resultCard.visibility = View.GONE
         }
     }
 }

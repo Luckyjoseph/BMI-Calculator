@@ -3,4 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="navy">#323b6d</color>
+
+    <!-- BMI Categories -->
+    <color name="bmi_underweight">#2196F3</color>
+    <color name="bmi_normal">#4CAF50</color>
+    <color name="bmi_overweight">#FF9800</color>
+    <color name="bmi_obese">#F44336</color>
 </resources>
