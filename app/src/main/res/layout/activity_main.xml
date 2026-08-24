@@ -26,20 +26,31 @@
 
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:padding="16dp">
 
-
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/weightText"
-                    android:textColor="@color/black"
-                    android:layout_gravity="center"
-                    android:text="weight"/>
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/weightText"
+                        android:textColor="@color/black"
+                        android:text="Weight"/>
+
+                    <Spinner
+                        android:id="@+id/weightUnitSpinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp" />
+                </LinearLayout>
 
                 <EditText
                     android:layout_width="match_parent"
@@ -47,6 +58,7 @@
                     android:id="@+id/weightEdit"
                     android:textSize="26sp"
                     android:hint="kg"
+                    android:inputType="numberDecimal"
                     android:layout_marginEnd="6dp"
                     android:textAlignment="center"
                     android:textColor="@color/navy"/>
@@ -55,20 +67,31 @@
 
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:padding="16dp">
 
-
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/heightText"
-                    android:textColor="@color/black"
-                    android:layout_gravity="center"
-                    android:text="Height"/>
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/heightText"
+                        android:textColor="@color/black"
+                        android:text="Height"/>
+
+                    <Spinner
+                        android:id="@+id/heightUnitSpinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp" />
+                </LinearLayout>
 
                 <EditText
                     android:layout_width="match_parent"
@@ -76,6 +99,7 @@
                     android:id="@+id/heightEdit"
                     android:textSize="26sp"
                     android:hint="cm"
+                    android:inputType="numberDecimal"
                     android:layout_marginStart="6dp"
                     android:textAlignment="center"
                     android:textColor="@color/navy"/>
