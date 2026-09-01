@@ -2,7 +2,7 @@
 
 A modern, intuitive, and lightweight Android application designed to help users track their Body Mass Index (BMI) with ease and precision.
 
-## 🚀 Features
+## Features
 
 - **Instant Calculations:** Get your BMI result in seconds with a simple tap.
 - **Dynamic Categories & Styling:** Automatically classifies your result into health categories with vibrant color-coded feedback:
@@ -17,20 +17,20 @@ A modern, intuitive, and lightweight Android application designed to help users 
 - **Modern UI:** Clean Material Design interface with real-time hint updates.
 - **Responsive Design:** Optimized for various screen sizes and orientations.
 
-## 🛠️ Built With
+## Built With
 
 - **Kotlin:** The modern language for Android development.
 - **XML Layouts:** Precise UI control with `ViewBinding`.
 - **Material Components:** For a consistent and professional look.
 
-## 📱 How to Use
+## How to Use
 
 1. Enter your **Weight** and select your preferred unit (kg/lb).
 2. Enter your **Height** and select your unit (cm/m/in).
 3. Tap **CALCULATE BMI**.
 4. View your result, health category, and personalized tip instantly!
 
-## 🚧 Upcoming Improvements
+## Upcoming Improvements
 
 - [ ] Historical data tracking and local storage.
 - [ ] Multi-user profile support.
