@@ -141,7 +141,6 @@
                 android:layout_gravity="center"
                 android:text="CALCULATE BMI" />
 
-            <!-- The Result Card is now placed immediately after the Button to reduce the gap -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/resultCard"
                 android:layout_width="match_parent"
@@ -176,6 +175,19 @@
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         tools:text="Normal weight" />
+
+                    <TextView
+                        android:id="@+id/tipText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="italic"
+                        tools:text="Great job! Maintain a balanced diet and regular exercise." />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

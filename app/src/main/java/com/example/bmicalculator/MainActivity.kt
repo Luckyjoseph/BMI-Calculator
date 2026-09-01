@@ -79,17 +79,34 @@ class MainActivity : AppCompatActivity() {
                 val bmi = weightInKg / heightInMeters.pow(2)
                 val bmiResult = String.format("%.2f", bmi)
 
-                val (bmiCategory, colorRes) = when {
-                    bmi < 18.5 -> "Underweight" to R.color.bmi_underweight
-                    bmi < 25 -> "Normal weight" to R.color.bmi_normal
-                    bmi < 30 -> "Overweight" to R.color.bmi_overweight
-                    else -> "Obese" to R.color.bmi_obese
+                val (bmiCategory, colorRes, healthTip) = when {
+                    bmi < 18.5 -> Triple(
+                        "Underweight",
+                        R.color.bmi_underweight,
+                        "Focus on nutrient-rich foods and building muscle mass through strength training."
+                    )
+                    bmi < 25 -> Triple(
+                        "Normal weight",
+                        R.color.bmi_normal,
+                        "Great job! Maintain a balanced diet and regular physical activity."
+                    )
+                    bmi < 30 -> Triple(
+                        "Overweight",
+                        R.color.bmi_overweight,
+                        "Try incorporating more whole grains, fruits, and vegetables into your diet."
+                    )
+                    else -> Triple(
+                        "Obese",
+                        R.color.bmi_obese,
+                        "Consult a healthcare professional for a tailored plan to improve your health."
+                    )
                 }
 
                 binding.resultCard.visibility = View.VISIBLE
                 binding.resultCard.setCardBackgroundColor(ContextCompat.getColor(this, colorRes))
                 binding.resultText.text = "BMI: $bmiResult"
                 binding.categoryText.text = bmiCategory
+                binding.tipText.text = healthTip
             } else {
                 binding.resultCard.visibility = View.GONE
             }
