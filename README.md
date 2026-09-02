@@ -34,7 +34,7 @@ A modern, intuitive, and lightweight Android application designed to help users 
 
 - [ ] Historical data tracking and local storage.
 - [ ] Multi-user profile support.
-- [ ] Graphical representation of BMI trends.
+- [X] Graphical representation of BMI trends.
 
 ---
 *Built with ❤️ for a healthier you.*
