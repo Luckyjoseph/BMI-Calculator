@@ -7,191 +7,309 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <ImageView
-        android:id="@+id/backgroundImg"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="20dp"
-        android:contentDescription="BMI Calculator Logo"
-        android:scaleType="fitCenter"
-        android:src="@drawable/bmii"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_header_gradient"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45" />
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingTop="24dp"
+        android:paddingEnd="@dimen/screen_padding"
+        android:paddingBottom="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/headerIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_header_icon"
+            android:contentDescription="@string/cd_app_icon"
+            android:padding="12dp"
+            android:src="@drawable/ic_bmi_monitor" />
 
-    <ScrollView
-        android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/headerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/headerTagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:alpha="0.85"
+                android:text="@string/app_tagline"
+                android:textAppearance="?attr/textAppearanceBodySmall"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/contentScroll"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        android:clipToPadding="false"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="@dimen/screen_padding">
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/inputCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp">
+                app:cardElevation="0dp"
+                app:strokeColor="?attr/colorOutline"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:padding="@dimen/card_padding">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_measurements"
+                        android:textAppearance="@style/TextAppearance.BMICalculator.SectionLabel" />
 
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:padding="16dp">
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
-                        <LinearLayout
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_scale" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:text="@string/label_weight"
+                            android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                        <com.google.android.material.button.MaterialButtonToggleGroup
+                            android:id="@+id/weightUnitToggle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="horizontal">
+                            android:contentDescription="@string/cd_weight_unit"
+                            app:selectionRequired="true"
+                            app:singleSelection="true">
 
-                            <TextView
-                                android:id="@+id/weightText"
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/unitKg"
+                                style="@style/Widget.BMICalculator.UnitToggle"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Weight"
-                                android:textColor="@color/black" />
+                                android:layout_height="40dp"
+                                android:text="@string/unit_kg" />
 
-                            <Spinner
-                                android:id="@+id/weightUnitSpinner"
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/unitLb"
+                                style="@style/Widget.BMICalculator.UnitToggle"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp" />
-                        </LinearLayout>
+                                android:layout_height="40dp"
+                                android:text="@string/unit_lb" />
+                        </com.google.android.material.button.MaterialButtonToggleGroup>
+                    </LinearLayout>
 
-                        <EditText
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/weightInputLayout"
+                        style="@style/Widget.BMICalculator.TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:suffixText="@string/unit_kg">
+
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/weightEdit"
                             android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:hint="kg"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/label_weight"
+                            android:imeOptions="actionNext"
                             android:inputType="numberDecimal"
-                            android:layout_marginEnd="6dp"
-                            android:textAlignment="center"
-                            android:textColor="@color/navy"
-                            android:textSize="26sp" />
-                    </LinearLayout>
+                            android:maxLength="6"
+                            android:textAppearance="?attr/textAppearanceHeadlineSmall" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:padding="16dp">
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
-                        <LinearLayout
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_height" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:text="@string/label_height"
+                            android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                        <com.google.android.material.button.MaterialButtonToggleGroup
+                            android:id="@+id/heightUnitToggle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="horizontal">
+                            android:contentDescription="@string/cd_height_unit"
+                            app:selectionRequired="true"
+                            app:singleSelection="true">
 
-                            <TextView
-                                android:id="@+id/heightText"
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/unitCm"
+                                style="@style/Widget.BMICalculator.UnitToggle"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Height"
-                                android:textColor="@color/black" />
+                                android:layout_height="40dp"
+                                android:text="@string/unit_cm" />
 
-                            <Spinner
-                                android:id="@+id/heightUnitSpinner"
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/unitM"
+                                style="@style/Widget.BMICalculator.UnitToggle"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp" />
-                        </LinearLayout>
+                                android:layout_height="40dp"
+                                android:text="@string/unit_m" />
 
-                        <EditText
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/unitIn"
+                                style="@style/Widget.BMICalculator.UnitToggle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:text="@string/unit_in" />
+                        </com.google.android.material.button.MaterialButtonToggleGroup>
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/heightInputLayout"
+                        style="@style/Widget.BMICalculator.TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:suffixText="@string/unit_cm">
+
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/heightEdit"
                             android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:hint="cm"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/label_height"
+                            android:imeOptions="actionDone"
                             android:inputType="numberDecimal"
-                            android:layout_marginStart="6dp"
-                            android:textAlignment="center"
-                            android:textColor="@color/navy"
-                            android:textSize="26sp" />
-                    </LinearLayout>
+                            android:maxLength="6"
+                            android:textAppearance="?attr/textAppearanceHeadlineSmall" />
+                    </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/calculateBtn"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="CALCULATE BMI" />
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/action_calculate"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textColor="?attr/colorOnPrimary"
+                app:cornerRadius="30dp"
+                app:icon="@drawable/ic_bmi_monitor"
+                app:iconGravity="textStart"
+                app:iconTint="?attr/colorOnPrimary" />
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/resultCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:visibility="gone"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="12dp"
+                app:cardElevation="0dp"
+                app:strokeColor="?attr/colorOutline"
+                app:strokeWidth="1dp"
                 tools:visibility="visible">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:padding="20dp">
+                    android:padding="@dimen/card_padding">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_your_result"
+                        android:textAppearance="@style/TextAppearance.BMICalculator.SectionLabel" />
 
                     <TextView
                         android:id="@+id/resultText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        tools:text="BMI: 24.50" />
+                        android:layout_marginTop="4dp"
+                        android:textAppearance="@style/TextAppearance.BMICalculator.BmiValue"
+                        android:textColor="?attr/colorOnSurface"
+                        tools:text="24.5" />
 
-                    <TextView
-                        android:id="@+id/categoryText"
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/categoryChip"
+                        style="@style/Widget.Material3.Chip.Assist"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
+                        android:layout_marginTop="4dp"
+                        android:clickable="false"
+                        android:textStyle="bold"
+                        app:chipStrokeWidth="0dp"
                         tools:text="Normal weight" />
+
+                    <com.example.bmicalculator.BmiGaugeView
+                        android:id="@+id/bmiGauge"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/gauge_height"
+                        android:layout_marginTop="20dp"
+                        android:contentDescription="@string/cd_bmi_scale" />
 
                     <TextView
                         android:id="@+id/tipText"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:gravity="center"
-                        android:paddingStart="16dp"
-                        android:paddingEnd="16dp"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
-                        android:textStyle="italic"
-                        tools:text="Great job! Maintain a balanced diet and regular exercise." />
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        tools:text="Great job! Maintain a balanced diet and regular physical activity." />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

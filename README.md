@@ -14,7 +14,8 @@ A modern, intuitive, and lightweight Android application designed to help users 
 - **Unit Flexibility:** Supports both Metric and Imperial systems:
   - **Weight:** Kilograms (kg) and Pounds (lb).
   - **Height:** Centimeters (cm), Meters (m), and Inches (in).
-- **Modern UI:** Clean Material Design interface with real-time hint updates.
+- **BMI Scale Gauge:** A colour-coded scale from 15 to 40 with an animated marker showing exactly where you sit.
+- **Modern UI:** Material 3 interface with dynamic color on Android 12+, a full dark theme, segmented unit toggles, and inline input validation.
 - **Responsive Design:** Optimized for various screen sizes and orientations.
 
 ## Built With

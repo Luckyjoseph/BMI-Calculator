@@ -1,7 +1,27 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Base.Theme.BMICalculator" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/brand_primary_dark</item>
+        <item name="colorOnPrimary">@color/brand_on_primary_dark</item>
+        <item name="colorPrimaryContainer">@color/brand_primary_container_dark</item>
+        <item name="colorOnPrimaryContainer">@color/brand_on_primary_container_dark</item>
+        <item name="colorSecondary">@color/brand_secondary_dark</item>
+        <item name="colorOnSecondary">@color/brand_on_secondary_dark</item>
+        <item name="colorSecondaryContainer">@color/brand_secondary_container_dark</item>
+        <item name="colorOnSecondaryContainer">@color/brand_on_secondary_container_dark</item>
+        <item name="android:colorBackground">@color/brand_background_dark</item>
+        <item name="colorOnBackground">@color/brand_on_background_dark</item>
+        <item name="colorSurface">@color/brand_surface_dark</item>
+        <item name="colorOnSurface">@color/brand_on_surface_dark</item>
+        <item name="colorSurfaceVariant">@color/brand_surface_variant_dark</item>
+        <item name="colorOnSurfaceVariant">@color/brand_on_surface_variant_dark</item>
+        <item name="colorOutline">@color/brand_outline_dark</item>
+        <item name="colorError">@color/brand_error_dark</item>
+        <item name="colorOnError">@color/brand_on_error_dark</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+
+        <item name="materialCardViewStyle">@style/Widget.BMICalculator.CardView</item>
     </style>
 </resources>

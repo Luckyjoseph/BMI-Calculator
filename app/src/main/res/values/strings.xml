@@ -1,12 +1,36 @@
 <resources>
     <string name="app_name">BMI Calculator</string>
-    <string-array name="weight_units">
-        <item>kg</item>
-        <item>lb</item>
-    </string-array>
-    <string-array name="height_units">
-        <item>cm</item>
-        <item>m</item>
-        <item>in</item>
-    </string-array>
+    <string name="app_tagline">Check your body mass index in seconds</string>
+
+    <string name="label_measurements">Your measurements</string>
+    <string name="label_weight">Weight</string>
+    <string name="label_height">Height</string>
+    <string name="action_calculate">Calculate BMI</string>
+    <string name="label_your_result">Your result</string>
+
+    <string name="unit_kg">kg</string>
+    <string name="unit_lb">lb</string>
+    <string name="unit_cm">cm</string>
+    <string name="unit_m">m</string>
+    <string name="unit_in">in</string>
+
+    <string name="cd_app_icon">BMI Calculator icon</string>
+    <string name="cd_weight_unit">Weight unit</string>
+    <string name="cd_height_unit">Height unit</string>
+    <string name="cd_bmi_scale">BMI scale from 15 to 40 with a marker at your result</string>
+
+    <string name="error_weight_required">Enter your weight</string>
+    <string name="error_height_required">Enter your height</string>
+    <string name="error_weight_range">Weight looks out of range</string>
+    <string name="error_height_range">Height looks out of range</string>
+
+    <string name="category_underweight">Underweight</string>
+    <string name="category_normal">Normal weight</string>
+    <string name="category_overweight">Overweight</string>
+    <string name="category_obese">Obese</string>
+
+    <string name="tip_underweight">Focus on nutrient-rich foods and build muscle with strength training.</string>
+    <string name="tip_normal">Great job! Maintain a balanced diet and regular physical activity.</string>
+    <string name="tip_overweight">Try adding more whole grains, fruits, and vegetables to your diet.</string>
+    <string name="tip_obese">Consult a healthcare professional for a plan tailored to you.</string>
 </resources>
