@@ -1,12 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="navy">#323b6d</color>
+
+    <!-- Brand palette (light) -->
+    <color name="brand_primary">#3F51E0</color>
+    <color name="brand_on_primary">#FFFFFF</color>
+    <color name="brand_primary_container">#E0E2FF</color>
+    <color name="brand_on_primary_container">#000B60</color>
+    <color name="brand_secondary">#00897B</color>
+    <color name="brand_on_secondary">#FFFFFF</color>
+    <color name="brand_secondary_container">#B6F2E7</color>
+    <color name="brand_on_secondary_container">#00201B</color>
+    <color name="brand_background">#FBF8FF</color>
+    <color name="brand_on_background">#1B1B1F</color>
+    <color name="brand_surface">#FBF8FF</color>
+    <color name="brand_on_surface">#1B1B1F</color>
+    <color name="brand_surface_variant">#E3E1EC</color>
+    <color name="brand_on_surface_variant">#46464F</color>
+    <color name="brand_outline">#777680</color>
+    <color name="brand_error">#BA1A1A</color>
+    <color name="brand_on_error">#FFFFFF</color>
+
+    <!-- Brand palette (dark) -->
+    <color name="brand_primary_dark">#BCC2FF</color>
+    <color name="brand_on_primary_dark">#0A1478</color>
+    <color name="brand_primary_container_dark">#2635A8</color>
+    <color name="brand_on_primary_container_dark">#E0E2FF</color>
+    <color name="brand_secondary_dark">#5BDBC7</color>
+    <color name="brand_on_secondary_dark">#003731</color>
+    <color name="brand_secondary_container_dark">#005048</color>
+    <color name="brand_on_secondary_container_dark">#B6F2E7</color>
+    <color name="brand_background_dark">#121317</color>
+    <color name="brand_on_background_dark">#E4E1E9</color>
+    <color name="brand_surface_dark">#121317</color>
+    <color name="brand_on_surface_dark">#E4E1E9</color>
+    <color name="brand_surface_variant_dark">#46464F</color>
+    <color name="brand_on_surface_variant_dark">#C7C5D0</color>
+    <color name="brand_outline_dark">#918F9A</color>
+    <color name="brand_error_dark">#FFB4AB</color>
+    <color name="brand_on_error_dark">#690005</color>
 
     <!-- BMI Categories -->
     <color name="bmi_underweight">#2196F3</color>
-    <color name="bmi_normal">#4CAF50</color>
-    <color name="bmi_overweight">#FF9800</color>
-    <color name="bmi_obese">#F44336</color>
+    <color name="bmi_normal">#2E9E5B</color>
+    <color name="bmi_overweight">#F59E0B</color>
+    <color name="bmi_obese">#E5484D</color>
+
+    <color name="bmi_underweight_container">#D4E8FD</color>
+    <color name="bmi_normal_container">#D2F1DE</color>
+    <color name="bmi_overweight_container">#FDEBCB</color>
+    <color name="bmi_obese_container">#FBDCDD</color>
+
+    <color name="bmi_underweight_on_container">#0B3D68</color>
+    <color name="bmi_normal_on_container">#0B3D22</color>
+    <color name="bmi_overweight_on_container">#573600</color>
+    <color name="bmi_obese_on_container">#5C1114</color>
 </resources>
